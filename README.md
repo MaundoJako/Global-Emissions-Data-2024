@@ -30,3 +30,7 @@ I have provided the raw csv file within this repository, can be found via: Data 
 
 ![image](https://github.com/MaundoJako/Global-Emissions-Data-2024/assets/91381193/57803d5f-5265-4822-9858-40f7986e1ed6)
 
+# Instructions
+1. Set up infrastructure
+   - Deploy the main.tf, then the bigquery.tf files.
+   - Use Terraform Init, and Terraform Apply. 
