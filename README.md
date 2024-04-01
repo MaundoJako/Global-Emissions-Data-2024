@@ -17,3 +17,5 @@ This repository uses 2024 global emissions data, the purpose of this work is ext
 
 I have provided the raw csv file within this repository, can be found via: Data / world_air_quality. Additionally, I have provided a cleaned partition file, which is the same one I use to upload to my GCP datalake. 
   
+Dashboard:
+![image](https://github.com/MaundoJako/Global-Emissions-Data-2024/assets/91381193/57803d5f-5265-4822-9858-40f7986e1ed6)
