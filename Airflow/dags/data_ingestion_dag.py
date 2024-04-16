@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime
-from plugins.data_ingestion.data_ingestion import download_from_kaggle, upload_to_gcs
+from plugins.data_ingestion.data_ingestion import download_from_kaggle, upload_to_gcs #direction will be different in Git for reading simplicity.
 
 # Define default arguments
 default_args = {
@@ -31,7 +31,7 @@ with DAG('data_ingestion_dag', default_args=default_args, schedule_interval=None
     upload_task = PythonOperator(
         task_id='upload_to_gcs',
         python_callable=upload_to_gcs,
-        op_args=['your_bucket_name', '/tmp/world-air-quality-data-2024-updated.zip', 'data/world_air_quality.csv']
+        op_args=['jm-data-lake', '/tmp/world-air-quality-data-2024-updated.zip', 'data/world_air_quality.csv']
     )
 
     # Define task dependencies
