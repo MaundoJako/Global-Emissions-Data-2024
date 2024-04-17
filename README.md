@@ -6,7 +6,9 @@ Data Engineering Zoomcamp: final project
 
 The purpose of this project is for learning purposes, as part of the Data Engineering Zoomcamp 2024 final project. 
 
-The problem which this project solves is that working with the kaggle data requires transformations and storage for future data batches. To achieve this, data is extracted using Airflow; loaded into  GCP bucket; transformed and loaded into BigQuery via dbt; then visualised using Looker.
+The problem which this project solves is that working with the kaggle data requires transformations and storage for future data batches. Therefore, this project provides automated ELT which can be repeated in the future
+
+To achieve this, data is extracted using Airflow; loaded into  GCP bucket; transformed and loaded into BigQuery via dbt; then visualised using Looker.
 
 The data is global emissions data (2024), imported from Kaggle.
 
@@ -19,7 +21,9 @@ I have provided the raw csv file within this repository, can be found via: Data 
 # Tools
 - GCP
 - Terraform
-- Jupyter Notebook
+- Python
+- Airflow
+- dbt
 - Looker Studio
 
 
