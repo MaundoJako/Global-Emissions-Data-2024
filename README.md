@@ -4,14 +4,16 @@ Data Engineering Zoomcamp: final project
 
 # Introduction
 
-This is a simple but efficient package that extracts data, cleans then uploads to a GCP bucket. It was originally intended to use dbt for trasformations, however, using Jupter Notebooks worked just as well. 
+The purpose of this project is for learning purposes, as part of the Data Engineering Zoomcamp 2024 final project. 
 
-This repository uses 2024 global emissions data, the purpose of this work is extract valuable data, clean and read this data, then visualise it efficiently. This was done for educational purposes, all work is my own.
+The problem which this project solves is that working with the kaggle data requires transformations and storage for future data batches. To achieve this, data is extracted using Airflow; loaded into  GCP bucket; transformed and loaded into BigQuery via dbt; then visualised using Looker.
+
+The data is global emissions data (2024), imported from Kaggle.
 
 # Dataset
 - https://www.kaggle.com/datasets/kanchana1990/world-air-quality-data-2024-updated/data
   
-I have provided the raw csv file within this repository, can be found via: Data / world_air_quality. Additionally, I have provided a cleaned partition file, which is the same one I use to upload to my GCP datalake. 
+I have provided the raw csv file within this repository, can be found via: Data / world_air_quality. Additionally, I have provided a cleaned partition file
 
 
 # Tools
