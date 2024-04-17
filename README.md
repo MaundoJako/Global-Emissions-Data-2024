@@ -23,7 +23,7 @@ I have provided the raw csv file within this repository, can be found via: Data 
 
 # Solution
 
-![image](https://github.com/MaundoJako/Global-Emissions-Data-2024/assets/91381193/c06a1afa-84bd-49c4-bcd6-d59d80a66a6f)
+[Screenshot 2024-04-17 at 15 49 51](https://github.com/MaundoJako/Global-Emissions-Data-2024/assets/91381193/b29edb4b-8d8d-42be-9d16-c5d06db89869)
 
 
 # Dashboard:
