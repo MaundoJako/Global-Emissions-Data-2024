@@ -36,6 +36,81 @@ I have provided the raw csv file within this repository, can be found via: Data 
 
 ![image](https://github.com/MaundoJako/Global-Emissions-Data-2024/assets/91381193/57803d5f-5265-4822-9858-40f7986e1ed6)
 
+
+# Prequisites
+GCP (Google Cloud Platform)
+
+    Installation: No specific installation required. Access GCP services via web console or Google Cloud SDK.
+    Configuration:
+        Install Google Cloud SDK: Follow instructions here for your operating system.
+        Authenticate Google Cloud SDK: Run gcloud auth login and follow the prompts to authenticate.
+        Set default project: Run gcloud config set project <project_id> to set the default project.
+
+Terraform
+
+    Installation: Install Terraform CLI using the following commands:
+
+    bash
+
+    brew install terraform  # For macOS
+
+    For other platforms, refer to the official installation guide.
+    Configuration:
+        No additional configuration required for basic usage.
+        Create Terraform configuration files (.tf) to define infrastructure resources.
+
+Python
+
+    Installation: Install Python 3.x from the official Python website or via package manager:
+
+    bash
+
+brew install python  # For macOS
+
+Configuration:
+
+    Install necessary Python packages using pip:
+
+        pip install pandas google-cloud-storage google-cloud-bigquery
+
+Airflow
+
+    Installation: Install Apache Airflow using pip:
+
+pip install apache-airflow
+
+Configuration:
+
+    Initialize Airflow database:
+
+    csharp
+
+airflow db init
+
+Start Airflow web server and scheduler:
+
+css
+
+        airflow webserver --port 8080
+        airflow scheduler
+
+dbt (data build tool)
+
+    Installation: Install dbt CLI using pip:
+
+    pip install dbt
+
+    Configuration:
+        Create a dbt project: Run dbt init <project_name> to initialize a new dbt project.
+        Configure dbt profiles: Edit ~/.dbt/profiles.yml to define database connections.
+
+Looker Studio
+
+    Installation: Access Looker Studio via web browser. No local installation required.
+    Configuration:
+        Sign up for a Looker Studio account and log in.
+        Configure connections to your data sources within Looker.
+
 # Instructions
 1. Set up infrastructure
    - Deploy the main.tf, then the bigquery.tf files.
