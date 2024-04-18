@@ -4,10 +4,10 @@
       ├── dags/
       │   └── data_ingestion_dag.py
       └── plugins/
-          ├── data_ingestion/
-          │   ├── __init__.py
-          │   └── data_ingestion.py
+          ├── __init__.py
+          ├── data_ingestion.py
           └── setup.py
+
 
 This repository contains the code for an Airflow DAG designed to automate the process of ingesting data from Kaggle into Google Cloud Storage (GCS). The DAG consists of two tasks: downloading data from Kaggle and uploading it to GCS.
 
