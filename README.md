@@ -2,6 +2,29 @@
 
 Data Engineering Zoomcamp: final project
 
+    Global-Emissions_data-2024/
+    ├── Airflow/
+    │   ├── dags/
+    │   │   └── data_ingestion_dag.py
+    │   └── plugins/
+    │       ├── __init__.py
+    │       ├── data_ingestion.py
+    │       └── setup.py
+    ├── Data/
+    │   ├── cleaned_data.parquet
+    │   └── world_air_quality.csv
+    ├── Terraform/
+    │   ├── main.tf
+    │   └── bigquery.tf
+    └── dbt/
+        └── final_project_DEz/
+            ├── models/
+            │   └── my_model.sql
+            └── macros/
+                └── ELT_Python_Script.py
+
+
+
 ## Introduction
 
 The purpose of this project is for learning purposes, as part of the Data Engineering Zoomcamp 2024 final project. 
@@ -73,7 +96,10 @@ I have provided the raw csv file within this repository, can be found via: Data 
 - Sign up for a Looker Studio account and log in.
 - Configure connections to your data sources within Looker.
 
-## Instructions
+
+
+
+# Instructions
 Further instructions can be found within each module's ReadMe, these instructions are at a higher level.
 
 **1. Set up infrastructure**
@@ -113,7 +139,5 @@ Further instructions can be found within each module's ReadMe, these instruction
    - BigQuery
    - Create any visualisation you wish
   
-**6. Future work**
-
 
   
