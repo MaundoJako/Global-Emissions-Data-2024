@@ -2,7 +2,7 @@
 
 Data Engineering Zoomcamp: final project
 
-# Introduction
+## Introduction
 
 The purpose of this project is for learning purposes, as part of the Data Engineering Zoomcamp 2024 final project. 
 
@@ -12,13 +12,13 @@ To achieve this, data is extracted using Airflow; loaded into  GCP bucket; trans
 
 The data is global emissions data (2024), imported from Kaggle.
 
-# Dataset
+## Dataset
 - https://www.kaggle.com/datasets/kanchana1990/world-air-quality-data-2024-updated/data
   
 I have provided the raw csv file within this repository, can be found via: Data / world_air_quality. Additionally, I have provided a cleaned partition file
 
 
-# Tools
+## Tools
 - GCP
 - Terraform
 - Python
@@ -27,17 +27,17 @@ I have provided the raw csv file within this repository, can be found via: Data 
 - Looker Studio
 
 
-# Solution
+## Solution
 
 ![image](https://github.com/MaundoJako/Global-Emissions-Data-2024/assets/91381193/b29edb4b-8d8d-42be-9d16-c5d06db89869)
 
 
-# Dashboard:
+## Dashboard:
 
 ![image](https://github.com/MaundoJako/Global-Emissions-Data-2024/assets/91381193/57803d5f-5265-4822-9858-40f7986e1ed6)
 
 
-# Prequisites
+## Prequisites
 **GCP (Google Cloud Platform)**
 
  No specific installation required. 
@@ -73,7 +73,7 @@ I have provided the raw csv file within this repository, can be found via: Data 
 - Sign up for a Looker Studio account and log in.
 - Configure connections to your data sources within Looker.
 
-# Instructions
+## Instructions
 Further instructions can be found within each module's ReadMe, these instructions are at a higher level.
 
 1. Set up infrastructure
