@@ -101,7 +101,8 @@ Further instructions can be found within each module's ReadMe, these instruction
    - Save my_model.sql
    - Open macros/
    - Save ELT_Python_Scripy.py
-   - Run in Terminal : dbt run
+   - Run in Terminal : dbt run  
+     - A BigQuery folder and file will be created, however you specified in your creation.
      
 **4. Upload to BigQuery**
    - Navigate to your GCP BigQuery folder
