@@ -102,7 +102,7 @@ I have provided the raw csv file within this repository, can be found via: Data 
 # Instructions
 Further instructions can be found within each module's ReadMe, these instructions are at a higher level.
 
-**1. Set up infrastructure**
+**1. Set up infrastructure --- Terraform**
    - Open Terraform/
    - Deploy main.tf and bigquery.tf files
        - Make changes to names, where applicable. Feel free to add further resources or to use variables for best practice, however, the current terraform code works just fine for what this project needs.
@@ -110,11 +110,11 @@ Further instructions can be found within each module's ReadMe, these instruction
    - Terraform Init
    - Terraform Apply
 
-**2. Review infrastructure**
+**2. Review infrastructure --- GCP**
    - Login to GCP
    - Check that your vm instance, bucket, and bigquery file is setup.
 
-**3. Extract Data**
+**3. Extract Data --- Airflow**
    - Open Airflow/plugins
    - Run data_ingestion.py
    - Open Airflow/dags
@@ -122,7 +122,7 @@ Further instructions can be found within each module's ReadMe, these instruction
      - The dag file will call the plugin, you will need both for the Airflow to work
    - Set up cron job to ensure code runs on a schedule, current code is assigned to run monthly.
 
-**4. Extract Data**
+**4. Transform and Load --- dbt**
    - Open dbt/final_project_dez/
    - Open models/
    - Save my_model.sql
@@ -132,7 +132,7 @@ Further instructions can be found within each module's ReadMe, these instruction
      - A BigQuery folder and file will be created, however you specified in your creation.
      
 
-**5. Data Visualisation**
+**5. Data Visualisation --- Looker**
    - Navigate to Looker Studio via your search engine
    - Create (top left)
    - Data Source
