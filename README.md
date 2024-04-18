@@ -95,8 +95,14 @@ Further instructions can be found within each module's ReadMe, these instruction
    - Run data_ingestion_dag.py
      - The dag file will call the plugin, you will need both for the Airflow to work 
 
-
-
+**4. Extract Data**
+   - Open dbt/final_project_dez/
+   - Open models/
+   - Save my_model.sql
+   - Open macros/
+   - Save ELT_Python_Scripy.py
+   - Run in Terminal : dbt run
+     
 **4. Upload to BigQuery**
    - Navigate to your GCP BigQuery folder
    - Create new table
