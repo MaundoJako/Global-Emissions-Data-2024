@@ -1,0 +1,5 @@
+# Run Airflow DAG to trigger data ingestion on the first day of every month
+
+In Terminal:
+
+    0 0 1 * * airflow dags trigger data_ingestion_dag  
