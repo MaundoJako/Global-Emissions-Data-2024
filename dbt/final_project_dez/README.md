@@ -1,10 +1,11 @@
+# dbt Overview
+
     final_project_DEz/
     ├── models/
     │   └── my_model.sql
     └── macros/
         └── ELT_Python_Script.py
         
-## Overview
 
 This dbt project (final_project_DEz) is designed to facilitate the Extract, Load, Transform (ELT) process for your data pipeline. It consists of two main components:
 
