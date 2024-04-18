@@ -87,6 +87,9 @@ sudo apt-get install dbt
 
     python -m venv dbt-env
     .\dbt-env\Scripts\activate
+## Installing dbt-bigquery
+
+    python -m pip install dbt-bigquery
 
 ## Initializing a dbt Project:
 
