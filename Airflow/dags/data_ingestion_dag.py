@@ -7,15 +7,14 @@ from plugins.data_ingestion.data_ingestion import download_from_kaggle, upload_t
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2024, 4, 16), # This is when it will run, adjust accordingly.
+    'start_date': datetime(2024, 4, 18), # This is when it will run, adjust accordingly.
     'email_on_failure': False,
     'email_on_retry': False,
     'retries': 1,
 }
 
 # Define the DAG
-with DAG('data_ingestion_dag', default_args=default_args, schedule_interval=None) as dag:
-    
+with DAG('data_ingestion_dag', default_args=default_args, schedule_interval='@monthly') as dag:    # Scheduled to run Monthly
     # Define tasks
     download_task = PythonOperator(
         task_id='download_from_kaggle',
