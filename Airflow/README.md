@@ -1,4 +1,4 @@
-**This repository contains the code for an Airflow DAG designed to automate the process of ingesting data from Kaggle into Google Cloud Storage (GCS). The DAG consists of two tasks: downloading data from Kaggle and uploading it to GCS.**
+#This repository contains the code for an Airflow DAG designed to automate the process of ingesting data from Kaggle into Google Cloud Storage (GCS). The DAG consists of two tasks: downloading data from Kaggle and uploading it to GCS.**
 
 **Install prequisites**
    
