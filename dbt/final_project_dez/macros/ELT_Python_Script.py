@@ -27,7 +27,7 @@ def extract_data_from_gcp_bucket(bucket_name, source_blob_name):
     
     return df
 
-def load_data_to_bigquery(df, project_id, dataset_id, table_id):
+def load_data_to_bigquery(df, project_id, dataset_id, table_id, partition_column=None):
     """
     Loads data from a DataFrame into BigQuery.
     
@@ -36,6 +36,7 @@ def load_data_to_bigquery(df, project_id, dataset_id, table_id):
         project_id (str): ID of the GCP project containing the BigQuery dataset.
         dataset_id (str): ID of the BigQuery dataset.
         table_id (str): ID of the BigQuery table to load the data into.
+        partition_column (str, optional): Name of the column to partition on. Defaults to None.
     """
     # Initialize a client
     bigquery_client = bigquery.Client(project=project_id)
@@ -47,6 +48,12 @@ def load_data_to_bigquery(df, project_id, dataset_id, table_id):
     # Convert DataFrame to JSON records and load into BigQuery
     job_config = bigquery.LoadJobConfig()
     job_config.write_disposition = bigquery.WriteDisposition.WRITE_TRUNCATE  # Overwrite the existing table
+    
+    if partition_column:
+        job_config.time_partitioning = bigquery.TimePartitioning(
+            type_=bigquery.TimePartitioningType.DAY,
+            field=partition_column
+        )
     
     job = bigquery_client.load_table_from_dataframe(
         df, table_ref, job_config=job_config
@@ -101,5 +108,5 @@ df = df[df['Value'] >= 0]
 units_to_drop = ['c', 'particles/cm³', '%']
 df = df[~df['Unit'].isin(units_to_drop)]
 
-# Loading data to GCP BigQuery
-load_data_to_bigquery(df, project_id, dataset_id, table_id)
+# Loading data to GCP BigQuery with partitioning on 'Date' column
+load_data_to_bigquery(df, project_id, dataset_id, table_id, partition_column='Date')
