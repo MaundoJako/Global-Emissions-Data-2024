@@ -1,30 +1,16 @@
 Install prequisites
   pip install os subprocess google datetime
 
-from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
-from datetime import datetime
-from plugins.data_ingestion.data_ingestion import download_from_kaggle, upload_to_gcs #direction will be different in Git for reading simplicity. If trying to replicate, change the from command to the path to your plugin with same format as here.
-
 
 
 README.md
 Airflow Data Ingestion Plugin
 
-This repository contains the code for an Airflow DAG (Directed Acyclic Graph) designed to automate the process of ingesting data from Kaggle into Google Cloud Storage (GCS). The DAG consists of two tasks: downloading data from Kaggle and uploading it to GCS.
-Installation
-Prerequisites
+This repository contains the code for an Airflow DAG designed to automate the process of ingesting data from Kaggle into Google Cloud Storage (GCS). The DAG consists of two tasks: downloading data from Kaggle and uploading it to GCS.
 
-    Python 3.x
-    Apache Airflow
-    Google Cloud Storage
+Install prequisites
+  pip install os subprocess google datetime
 
-Setup
-
-    Clone this repository to your local machine.
-    Install the required Python packages by running:
-
-    pip install -r requirements.txt
 
 Usage
 Plugin Files
