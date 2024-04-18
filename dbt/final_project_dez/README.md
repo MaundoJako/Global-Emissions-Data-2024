@@ -41,3 +41,60 @@ This dbt project (final_project_DEz) is designed to facilitate the Extract, Load
 ## Verify Results:
 
    - Check the logs and outputs to ensure the dbt models have been executed successfully and data has been loaded into BigQuery.
+
+
+
+# Setting up DBT
+
+### Mac:
+
+Install dbt:
+
+    brew tap dbt-labs/dbt
+    brew install dbt
+
+
+### Windows:
+
+Install dbt:
+
+    Run the following command in PowerShell to install dbt using Chocolatey:
+
+    choco install dbt
+
+
+### Linux:
+
+sudo apt-get update
+sudo apt-get install dbt
+
+
+
+## Verify Installation:
+
+
+    dbt --version
+
+
+## Creating a Virtual Environment:
+
+### Mac/Linux:
+
+    python3 -m venv dbt-env
+    source dbt-env/bin/activate
+
+### Windows:
+
+    python -m venv dbt-env
+    .\dbt-env\Scripts\activate
+
+## Initializing a dbt Project:
+
+Navigate to the directory where you want to create your dbt project.
+Run the following command to initialize a new dbt project:
+
+    dbt init
+    
+## Verifying
+
+    dbt debug
