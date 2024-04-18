@@ -38,100 +38,64 @@ I have provided the raw csv file within this repository, can be found via: Data 
 
 
 # Prequisites
-GCP (Google Cloud Platform)
+**GCP (Google Cloud Platform)**
 
-    Installation: No specific installation required. Access GCP services via web console or Google Cloud SDK.
-    Configuration:
-        Install Google Cloud SDK: Follow instructions here for your operating system.
-        Authenticate Google Cloud SDK: Run gcloud auth login and follow the prompts to authenticate.
-        Set default project: Run gcloud config set project <project_id> to set the default project.
+ No specific installation required. 
+ 
+ Access GCP services via web console or Google Cloud SDK. 
+ 
+ - Configuration: Install Google Cloud SDK: Follow instructions here for your operating system. 
+  
+ - Authenticate Google Cloud SDK: Run gcloud auth login and follow the prompts to authenticate. 
+  
+ - Set default project: Run gcloud config set project <project_id> to set the default project.
 
-Terraform
+**Terraform** 
+  
+    pip install terraform
 
-    Installation: Install Terraform CLI using the following commands:
+**Python**
 
-    bash
+    pip install python
+    
+    pip install pandas google-cloud-storage google-cloud-bigquery
 
-    brew install terraform  # For macOS
+**Airflow**
 
-    For other platforms, refer to the official installation guide.
-    Configuration:
-        No additional configuration required for basic usage.
-        Create Terraform configuration files (.tf) to define infrastructure resources.
+    pip install apache-airflow
 
-Python
-
-    Installation: Install Python 3.x from the official Python website or via package manager:
-
-    bash
-
-brew install python  # For macOS
-
-Configuration:
-
-    Install necessary Python packages using pip:
-
-        pip install pandas google-cloud-storage google-cloud-bigquery
-
-Airflow
-
-    Installation: Install Apache Airflow using pip:
-
-pip install apache-airflow
-
-Configuration:
-
-    Initialize Airflow database:
-
-    csharp
-
-airflow db init
-
-Start Airflow web server and scheduler:
-
-css
-
-        airflow webserver --port 8080
-        airflow scheduler
-
-dbt (data build tool)
-
-    Installation: Install dbt CLI using pip:
+**dbt (data build tool)** 
 
     pip install dbt
 
-    Configuration:
-        Create a dbt project: Run dbt init <project_name> to initialize a new dbt project.
-        Configure dbt profiles: Edit ~/.dbt/profiles.yml to define database connections.
+**Looker Studio**
 
-Looker Studio
-
-    Installation: Access Looker Studio via web browser. No local installation required.
-    Configuration:
-        Sign up for a Looker Studio account and log in.
-        Configure connections to your data sources within Looker.
+- Sign up for a Looker Studio account and log in.
+- Configure connections to your data sources within Looker.
 
 # Instructions
+Further instructions can be found within each module's ReadMe, these instructions are at a higher level.
+
 1. Set up infrastructure
-   - Deploy the main.tf, then the bigquery.tf files.
-   - Make changes to names, where applicable. Feel free to add further resources or to use variables for best practice, however, the current terraform code works just fine.
-   - You will need to add your GCP credentials to your machine.
-   - Use Terraform Init, and Terraform Apply.
+   - Open Terraform/
+   - Deploy main.tf and bigquery.tf files
+       - Make changes to names, where applicable. Feel free to add further resources or to use variables for best practice, however, the current terraform code works just fine for what this project needs.
+   - Add your GCP credentials to your machine.
+   - Terraform Init
+   - Terraform Apply
 
 2. Review infrastructure
-   - Infrastructure should be all set up, review to make sure you have your vm instance, bucket, and bigquery set up.
+   - Login to GCP
+   - Check that your vm instance, bucket, and bigquery file is setup.
 
-3. Run Workflow
-   - Time to get the data, follow the jupyter notebook
-   - You might need to pip install some prequisites.
-   - Kaggle Authentication
-      - Create kaggle login
-      - My Account
-      - Create new token
-      - A 'kaggle.json' file will be downloaded.
-      - Move kaggle file from your downloads to ~/.kaggle
-         - (MacOS) Enter in your terminal: mv /path_to_downloads/kaggle.json /path_to_kaggle/.kaggle/
-  - Download into parquet (change path accordingly), upload to GCP storage (change path accordingly)
+3. Extract Data
+   - Open Airflow/plugins
+   - Run data_ingestion.py
+   - Open Airflow/dags
+   - Run data_ingestion_dag.py
+     - The dag file will call the plugin, you will need both for the Airflow to work 
+
+
 
 4. Upload to BigQuery
    - Navigate to your GCP BigQuery folder
