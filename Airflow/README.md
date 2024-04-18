@@ -1,6 +1,7 @@
 Install prequisites
-  pip install os 
-  
+  pip install os subprocess google
+
+
   
   
   Kaggle Authentication
