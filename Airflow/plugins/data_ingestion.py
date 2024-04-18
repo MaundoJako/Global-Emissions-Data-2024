@@ -47,7 +47,7 @@ def upload_to_gcs(bucket_name, source_file, destination_blob_name):
     
     blob.upload_from_filename(source_file)
 
-# Example usage
+# Example usage: These are not necessary but I just put these in here for practice. We will be inputting data from the dags file.
 if __name__ == "__main__":
     # Set Kaggle credentials
     kaggle_username = 'jakemaund'
