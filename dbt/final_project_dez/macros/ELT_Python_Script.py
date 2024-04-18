@@ -27,7 +27,7 @@ def extract_data_from_gcp_bucket(bucket_name, source_blob_name):
     
     return df
 
-def load_data_to_bigquery(df, project_id, dataset_id, table_id, partition_column=None):
+def load_data_to_bigquery(df, project_id, dataset_id, table_id, partition_column=None, clustering_columns=None):
     """
     Loads data from a DataFrame into BigQuery.
     
@@ -37,6 +37,7 @@ def load_data_to_bigquery(df, project_id, dataset_id, table_id, partition_column
         dataset_id (str): ID of the BigQuery dataset.
         table_id (str): ID of the BigQuery table to load the data into.
         partition_column (str, optional): Name of the column to partition on. Defaults to None.
+        clustering_columns (list, optional): List of column names to use for clustering. Defaults to None. 
     """
     # Initialize a client
     bigquery_client = bigquery.Client(project=project_id)
@@ -54,6 +55,9 @@ def load_data_to_bigquery(df, project_id, dataset_id, table_id, partition_column
             type_=bigquery.TimePartitioningType.DAY,
             field=partition_column
         )
+    
+    if clustering_columns:
+        job_config.clustering_fields = clustering_columns
     
     job = bigquery_client.load_table_from_dataframe(
         df, table_ref, job_config=job_config
@@ -108,5 +112,5 @@ df = df[df['Value'] >= 0]
 units_to_drop = ['c', 'particles/cm³', '%']
 df = df[~df['Unit'].isin(units_to_drop)]
 
-# Loading data to GCP BigQuery with partitioning on 'Date' column
-load_data_to_bigquery(df, project_id, dataset_id, table_id, partition_column='Date')
+# Loading data to GCP BigQuery with partitioning on 'Date' column and clustering on 'Country Code' and 'City'
+load_data_to_bigquery(df, project_id, dataset_id, table_id, partition_column='Date', clustering_columns=['Country Code', 'City'])
