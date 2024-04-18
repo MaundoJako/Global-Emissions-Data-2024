@@ -93,7 +93,8 @@ Further instructions can be found within each module's ReadMe, these instruction
    - Run data_ingestion.py
    - Open Airflow/dags
    - Run data_ingestion_dag.py
-     - The dag file will call the plugin, you will need both for the Airflow to work 
+     - The dag file will call the plugin, you will need both for the Airflow to work
+   - Set up cron job to ensure code runs on a schedule, current code is assigned to run monthly.
 
 **4. Extract Data**
    - Open dbt/final_project_dez/
@@ -104,15 +105,6 @@ Further instructions can be found within each module's ReadMe, these instruction
    - Run in Terminal : dbt run  
      - A BigQuery folder and file will be created, however you specified in your creation.
      
-**4. Upload to BigQuery**
-   - Navigate to your GCP BigQuery folder
-   - Create new table
-   - Source: Bucket
-   - Select your newly created parquet file.
-   - External table
-   - Auto Schema
-   - Save
-   - Test it is working by running a simple SQL query in BigQuery.
 
 **5. Data Visualisation**
    - Navigate to Looker Studio via your search engine
